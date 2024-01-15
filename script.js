@@ -1,11 +1,6 @@
 const showButton = document.querySelector("#show-button")
 const dialog = document.querySelector("dialog")
-const cancel = dialog.querySelector("#cancel")
 dialog.showModal()
-
-cancel.addEventListener("click", () => {
-  dialog.close()
-})
 
 
 function createUser(player1, player2) {
