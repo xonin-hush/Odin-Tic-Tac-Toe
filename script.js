@@ -86,7 +86,7 @@ createGrid(3)
 function createGrid(itemNum) {
   container.style.gridTemplateColumns = `repeat(${itemNum},1fr)`;
   container.style.gridTemplateRows = `repeat(${itemNum},1fr)`;
-  const cellSize = 40 / itemNum + "rem"
+  const cellSize =30 / itemNum + "rem"
   for (let i = 0; i < (itemNum * itemNum); i++) {
     const gridItem = document.createElement('div')
     gridItem.setAttribute("id", "grid-item")
