@@ -70,6 +70,19 @@ function checkWin(array) {
   }
 
 }
+handlePlayerName()
+function handlePlayerName() {
+  submit.addEventListener("click", (event) => {
+    event.preventDefault(); // We don't want to submit this fake form
+    var player1 = document.querySelector("#player-1")
+    player1 = player1.value
+    var player2 = document.querySelector("#player-2")
+    player2 = player2.value
+    console.log({player1,player2})
+    dialog.close(dialog.value); // Have to send the select box value here.
+  });
+}
+
 const container = document.querySelector('#container');
 container.classList.add('grid-container')
 const sizeButton = document.querySelector('#change-size')
