@@ -6,7 +6,14 @@ container.classList.add('grid-container')
 const sizeButton = document.querySelector('#change-size')
 createGrid(3)
 let player1 = ""
+player1 = document.createElement('label')
+player1.setAttribute('playerOrder', 'player1')
 let player2 = ""
+player2 = document.createElement('label')
+player2.setAttribute('playerOrder', 'player2')
+var player = ""
+const array = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]]
+
 function createGrid(itemNum) {
   container.style.gridTemplateColumns = `repeat(${itemNum},1fr)`;
   container.style.gridTemplateRows = `repeat(${itemNum},1fr)`;
@@ -28,8 +35,8 @@ function createUser(p1, p2) {
 }
 gameBoard()
 function gameBoard() {
-  const array = [["o", "o", "o"], ["o", "o", "o"], ["o", "o", "o"]]
   container.addEventListener("click", function (e) {
+
     console.log(e.target.value)
   })
   return { array }
@@ -127,20 +134,25 @@ function colorMode(gridItem) {
   });
 
 }
-function truns() {
-  player=player1
-  container.addEventListener("click", () => {
-    if(player==player1){
-      //do something
-      player=player2
+handleTurns()
+function handleTurns() {
+  var person1 = "person1"
+  var person2 = "person2"
+  var person = ""
+  person = person1
+  window.addEventListener('click', function (e) {
+    if (person == person1) {
+      console.log("player1 is playing")
+      e.target.innerHTML = '<span>X</span>';
+      person = person2
     }
-    else if(player==player2){
-      //do something
-      player=player1
+    else if (person == person2) {
+      console.log("player2 is playing")
+      e.target.innerHTML = '<span>O</span>';
+      person = person1
     }
-console.log("hello")
-  })
+    console.log("hello")
+  });
 
 
 }
-truns()
