@@ -13,15 +13,53 @@ player2 = document.createElement('label')
 player2.setAttribute('playerOrder', 'player2')
 var player = ""
 const array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
-function handlePosition(value) {
-  switch (final) {
+function handlePosition(value,XO) {
+  switch (value) {
     case 0:
-      console.log(final = [0][0])
-      // code block
+      array[0][0]=XO
+      console.log(array)
+      // checkWin(array)
       break
-    case value:
-      // code block
-      break;
+      case 1:
+        array[0][1]=XO
+        console.log(array)
+        // checkWin(array)
+        break
+        case 2:
+      array[0][2]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 3:
+      array[1][0]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 4:
+      array[1][1]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 5:
+      array[1][2]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 6:
+      array[2][0]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 7:
+      array[2][1]=XO
+      console.log(array)
+      // checkWin(array)
+      break
+      case 8:
+      array[2][2]=XO  
+      console.log(array)
+      // checkWin(array)
+      break
     default:
     // code block
   }
@@ -47,14 +85,14 @@ function createGrid(itemNum) {
 function createUser(p1, p2) {
   return { p1, p2 };
 }
-gameBoard()
-function gameBoard() {
-  container.addEventListener("click", function (e) {
-    console.log(e.target.value)
-    array.splice(e.target.value, 1,)
-  })
-  return { array }
-}
+// gameBoard()
+// function gameBoard() {
+//   container.addEventListener("click", function (e) {
+//     console.log(e.target.value)
+//     array.splice(e.target.value, 1,)
+//   })
+//   return { array }
+// }
 
 function checkWin(array) {
   if (array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") {
@@ -121,14 +159,11 @@ function handlePlayerName() {
     dialog.close(dialog.value); // Have to send the select box value here
   });
 }
-// function doStuff() {
-//   // console.log("hello!");
-//   // console.log({ player1, player2 })
-//   // console.log(player1)
-//   // console.log(player1)
+function doStuff() {
+  console.log(array)
 
-// }
-// setInterval(doStuff, 3000);
+}
+setInterval(doStuff, 3000);
 
 
 function resetGameBoard() {
@@ -154,8 +189,9 @@ function handleTurns() {
   var person2 = "person2"
   var person = ""
   person = person1
-  window.addEventListener('click', function (e) {
+  container.addEventListener('click', function (e) {
     if (person == person1) {
+      handlePosition(e.target.value,"x")
       console.log("player1 is playing")
       e.target.innerHTML = '<span>X</span>';
       person = person2
@@ -163,12 +199,11 @@ function handleTurns() {
     }
     else if (person == person2) {
       console.log("player2 is playing")
+      handlePosition(e.target.value,"o")
       e.target.innerHTML = '<span>O</span>';
       person = person1
       return "O"
     }
 
   });
-
-
 }
