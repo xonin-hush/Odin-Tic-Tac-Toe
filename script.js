@@ -12,8 +12,22 @@ let player2 = ""
 player2 = document.createElement('label')
 player2.setAttribute('playerOrder', 'player2')
 var player = ""
-const array = [["e", "e", "e"], ["e", "e", "e"], ["e", "e", "e"]]
-
+const array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
+function handlePosition(value) {
+  switch (final) {
+    case 0:
+      console.log(final = [0][0])
+      // code block
+      break
+    case value:
+      // code block
+      break;
+    default:
+    // code block
+  }
+}
+console.log(array[0][1])
+console.log(array)
 function createGrid(itemNum) {
   container.style.gridTemplateColumns = `repeat(${itemNum},1fr)`;
   container.style.gridTemplateRows = `repeat(${itemNum},1fr)`;
@@ -36,8 +50,8 @@ function createUser(p1, p2) {
 gameBoard()
 function gameBoard() {
   container.addEventListener("click", function (e) {
-
     console.log(e.target.value)
+    array.splice(e.target.value, 1,)
   })
   return { array }
 }
@@ -145,13 +159,15 @@ function handleTurns() {
       console.log("player1 is playing")
       e.target.innerHTML = '<span>X</span>';
       person = person2
+      return "X"
     }
     else if (person == person2) {
       console.log("player2 is playing")
       e.target.innerHTML = '<span>O</span>';
       person = person1
+      return "O"
     }
-    console.log("hello")
+
   });
 
 
