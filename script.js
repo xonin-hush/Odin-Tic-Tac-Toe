@@ -20,12 +20,16 @@ const array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
 function gameBoard(value, XO) {
   switch (value) {
     case 0:
-      array[0][0] = XO
-
+      if ((array[0][0] != "x") && (array[0][0] != "o")) {
+        array[0][0] = XO
+      }
       checkWin(array)
       break
     case 1:
-      array[0][1] = XO
+      if ((array[0][1] != "x") && (array[0][1] != "o")) {
+        array[0][1] = XO
+      }
+
 
       checkWin(array)
       break
@@ -186,38 +190,43 @@ function handleTurns(person1, person2) {
   var person = ""
   person = person1
   container.addEventListener('click', function (e) {
-    if (person == person1) {
-      playing2.classList.remove("selected")
-      playing1.textContent = `${person1} playing-X`
-      playing1.classList.add("selected")
-      currentStatus1.appendChild(playing1)
-      playing2.textContent = `${person2} playing-O`
-      currentStatus2.appendChild(playing2)
-      gameBoard(e.target.value, "x")
-      e.target.textContent="X";
-      e.target.style.fontSize="10rem"
-      e.target.style.display="flex"
-      e.target.style.justifyContent="center"
-      e.target.style.alignItems="center"
-      person = person2
-      //players
 
-    }
-    else if (person == person2) {
-      playing1.textContent = `${person1} playing-X`
-      playing1.classList.remove("selected")
-      currentStatus1.appendChild(playing1)
-      playing2.textContent = `${person2} playing-O`
-      playing2.classList.add("selected")
-      currentStatus2.appendChild(playing2)
-      gameBoard(e.target.value, "o")
-      e.target.textContent="O";
-      e.target.style.fontSize="10rem"
-      e.target.style.display="flex"
-      e.target.style.justifyContent="center"
-      e.target.style.alignItems="center"
-      person = person1
-    }
+    if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
 
+      if (person == person1) {
+        playing2.classList.remove("selected")
+        playing1.textContent = `${person1} playing-X`
+        playing1.classList.add("selected")
+        currentStatus1.appendChild(playing1)
+        playing2.textContent = `${person2} playing-O`
+        currentStatus2.appendChild(playing2)
+        gameBoard(e.target.value, "x")
+        e.target.textContent = "X";
+        e.target.style.fontSize = "10rem"
+        e.target.style.display = "flex"
+        e.target.style.justifyContent = "center"
+        e.target.style.alignItems = "center"
+        person = person2
+        //players
+      }
+    }
+    if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
+      if (person == person2) {
+        playing1.textContent = `${person1} playing-X`
+        playing1.classList.remove("selected")
+        currentStatus1.appendChild(playing1)
+        playing2.textContent = `${person2} playing-O`
+        playing2.classList.add("selected")
+        currentStatus2.appendChild(playing2)
+        gameBoard(e.target.value, "o")
+        e.target.textContent = "O";
+        e.target.style.fontSize = "10rem"
+        e.target.style.display = "flex"
+        e.target.style.justifyContent = "center"
+        e.target.style.alignItems = "center"
+        person = person1
+      }
+    }
   });
+
 }
