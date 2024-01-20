@@ -11,6 +11,7 @@ const playing2 = document.createElement('div');
 container.classList.add('grid-container')
 player1 = document.createElement('label')
 player2 = document.createElement('label')
+displayBar = document.querySelector('#display-bar')
 dialog.showModal()
 createGrid(3)
 
@@ -100,7 +101,11 @@ function createUser() {
 
 function checkWin(array) {
   if (array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") {
-
+    console.log({displayBar})
+    winner = document.createElement("div")
+    console.log({winner})
+    winner.textContent = `Yaaay ${player1} Won`
+    displayBar.appendChild(winner)
 
 
   }
@@ -190,7 +195,7 @@ function handleTurns(person1, person2) {
   var person = ""
   person = person1
   container.addEventListener('click', function (e) {
-
+    console.log(array)
     if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
 
       if (person == person1) {
