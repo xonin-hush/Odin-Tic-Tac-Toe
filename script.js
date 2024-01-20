@@ -6,6 +6,8 @@ const dialog = document.querySelector("dialog")
 const sizeButton = document.querySelector('#change-size')
 const currentStatus1 = document.querySelector('#status1')
 const currentStatus2 = document.querySelector('#status1')
+const playing1 = document.createElement('div');
+const playing2 = document.createElement('div');
 container.classList.add('grid-container')
 player1 = document.createElement('label')
 player2 = document.createElement('label')
@@ -80,9 +82,16 @@ function createGrid(itemNum) {
     colorMode(gridItem)
   }
 }
-
-function createUser(p1, p2) {
-  return { p1, p2 };
+createUser()
+function createUser() {
+  if (player1 != "") {
+    playing2.classList.remove("selected")
+    playing1.textContent = `${player1} playing-X`
+    playing1.classList.add("selected")
+    currentStatus1.appendChild(playing1)
+    playing2.textContent = `${player2} playing-O`
+    currentStatus2.appendChild(playing2)
+  }
 }
 
 function checkWin(array) {
@@ -171,8 +180,7 @@ function colorMode(gridItem) {
 }
 
 function handleTurns(person1, person2) {
-  const playing1 = document.createElement('div');
-  const playing2 = document.createElement('div');
+
   var person1 = person1
   var person2 = person2
   var person = ""
@@ -181,25 +189,33 @@ function handleTurns(person1, person2) {
     if (person == person1) {
       playing2.classList.remove("selected")
       playing1.textContent = `${person1} playing-X`
-      playing1.classList.add ("selected")
+      playing1.classList.add("selected")
       currentStatus1.appendChild(playing1)
       playing2.textContent = `${person2} playing-O`
       currentStatus2.appendChild(playing2)
       gameBoard(e.target.value, "x")
-      e.target.innerHTML = '<span>X</span>';
+      e.target.textContent="X";
+      e.target.style.fontSize="10rem"
+      e.target.style.display="flex"
+      e.target.style.justifyContent="center"
+      e.target.style.alignItems="center"
       person = person2
       //players
 
     }
     else if (person == person2) {
       playing1.textContent = `${person1} playing-X`
-     playing1.classList.remove("selected") 
+      playing1.classList.remove("selected")
       currentStatus1.appendChild(playing1)
       playing2.textContent = `${person2} playing-O`
-      playing2.classList.add ("selected")
+      playing2.classList.add("selected")
       currentStatus2.appendChild(playing2)
       gameBoard(e.target.value, "o")
-      e.target.innerHTML = '<span>O</span>';
+      e.target.textContent="O";
+      e.target.style.fontSize="10rem"
+      e.target.style.display="flex"
+      e.target.style.justifyContent="center"
+      e.target.style.alignItems="center"
       person = person1
     }
 
