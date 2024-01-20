@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Whisper&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +18,8 @@
             <ul>
                 <il><a href="https://github.com/xonin-hush/Odin-Tic-Tac-Toe">Repo's page</a></il>
                 <il><a href="https://github.com/xonin-hush/"> Visit my github page</a></il>
-                <il><a href="https://www.theodinproject.com/lessons/foundations-motivation-and-mindset">Motivation and Mindset</a></il>
+                <il><a href="https://www.theodinproject.com/lessons/foundations-motivation-and-mindset">Motivation and
+                        Mindset</a></il>
 
             </ul>
 
@@ -34,12 +38,18 @@
             </form>
             <button id="submit" type="submit" value="Submit">Play</button>
         </dialog>
-        <div class="main-container">
-            <div class="flex-container">
-                <div id="container">
-                </div>
-                <div class="buttons">
-                    <button id="reset" onclick="resetGameBoard()">Reset</button>
+        <div class="first-container">
+
+
+            <div class="main-container">
+                <div id="status1"></div>
+                <div id="status2"></div>
+                <div class="flex-container">
+                    <div id="container">
+                    </div>
+                    <div class="buttons">
+                        <button id="reset" onclick="resetGameBoard()">Reset</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,12 +4,14 @@ var player = ""
 const showButton = document.querySelector("#show-button")
 const dialog = document.querySelector("dialog")
 const sizeButton = document.querySelector('#change-size')
+const currentStatus1 = document.querySelector('#status1')
+const currentStatus2 = document.querySelector('#status1')
 container.classList.add('grid-container')
 player1 = document.createElement('label')
 player2 = document.createElement('label')
 dialog.showModal()
 createGrid(3)
-handleTurns()
+
 handlePlayerName()
 const array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
 
@@ -144,6 +146,7 @@ function handlePlayerName() {
     player2 = document.querySelector("#player-2")
     player2 = player2.value
     createUser(player1, player2)
+    handleTurns(player1, player2)
     dialog.close(dialog.value); // Have to send the select box value here
   });
 }
@@ -167,25 +170,37 @@ function colorMode(gridItem) {
 
 }
 
-function handleTurns() {
-  var person1 = "person1"
-  var person2 = "person2"
+function handleTurns(person1, person2) {
+  const playing1 = document.createElement('div');
+  const playing2 = document.createElement('div');
+  var person1 = person1
+  var person2 = person2
   var person = ""
   person = person1
   container.addEventListener('click', function (e) {
     if (person == person1) {
+      playing2.classList.remove("selected")
+      playing1.textContent = `${person1} playing-X`
+      playing1.classList.add ("selected")
+      currentStatus1.appendChild(playing1)
+      playing2.textContent = `${person2} playing-O`
+      currentStatus2.appendChild(playing2)
       gameBoard(e.target.value, "x")
-      console.log("player1 is playing")
       e.target.innerHTML = '<span>X</span>';
       person = person2
-      return "X"
+      //players
+
     }
     else if (person == person2) {
-      console.log("player2 is playing")
+      playing1.textContent = `${person1} playing-X`
+     playing1.classList.remove("selected") 
+      currentStatus1.appendChild(playing1)
+      playing2.textContent = `${person2} playing-O`
+      playing2.classList.add ("selected")
+      currentStatus2.appendChild(playing2)
       gameBoard(e.target.value, "o")
       e.target.innerHTML = '<span>O</span>';
       person = person1
-      return "O"
     }
 
   });
