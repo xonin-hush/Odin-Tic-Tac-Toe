@@ -91,10 +91,10 @@ createUser()
 function createUser() {
   if (player1 != "") {
     playing2.classList.remove("selected")
-    playing1.textContent = `${player1} playing-X`
-    playing1.classList.add("selected")
+    playing1.textContent = `${player1} playing X`
     currentStatus1.appendChild(playing1)
-    playing2.textContent = `${player2} playing-O`
+    playing2.textContent = `${player2} playing O`
+    playing2.classList.add("selected")
     currentStatus2.appendChild(playing2)
   }
 }
@@ -205,24 +205,22 @@ function colorMode(gridItem) {
 
 }
 
-function handleTurns(person1, person2) {
-
-  var person1 = person1
-  var person2 = person2
+function handleTurns(first, second) {
+  var person1 = first
+  var person2 = second
   var person = ""
   person = person1
   container.addEventListener('click', function (e) {
     if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
-
       if (person == person1) {
         playing2.classList.remove("selected")
-        playing1.textContent = `${person1} playing-X`
+        playing1.textContent = `${person1} playing X`
         playing1.classList.add("selected")
         currentStatus1.appendChild(playing1)
-        playing2.textContent = `${person2} playing-O`
+        playing2.textContent = `${person2} playing O`
         currentStatus2.appendChild(playing2)
-        gameBoard(e.target.value, "x")
-        e.target.textContent = "X";
+        gameBoard(e.target.value, "o")
+        e.target.textContent = "O";
         e.target.style.fontSize = "10rem"
         e.target.style.display = "flex"
         e.target.style.justifyContent = "center"
@@ -233,14 +231,14 @@ function handleTurns(person1, person2) {
     }
     if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
       if (person == person2) {
-        playing1.textContent = `${person1} playing-X`
+        playing1.textContent = `${person1} playing X`
         playing1.classList.remove("selected")
         currentStatus1.appendChild(playing1)
-        playing2.textContent = `${person2} playing-O`
+        playing2.textContent = `${person2} playing O`
         playing2.classList.add("selected")
         currentStatus2.appendChild(playing2)
-        gameBoard(e.target.value, "o")
-        e.target.textContent = "O";
+        gameBoard(e.target.value, "x")
+        e.target.textContent = "X";
         e.target.style.fontSize = "10rem"
         e.target.style.display = "flex"
         e.target.style.justifyContent = "center"
@@ -251,3 +249,48 @@ function handleTurns(person1, person2) {
   });
 
 }
+
+// function handleTurns(first, second) {
+//   var person1 = first
+//   var person2 = second
+//   var person = ""
+//   person = person1
+//   container.addEventListener('click', function (e) {
+//     if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
+//       if (person == person1) {
+//         playing2.classList.remove("selected")
+//         playing1.textContent = `${person1} playing X`
+//         playing1.classList.add("selected")
+//         currentStatus1.appendChild(playing1)
+//         playing2.textContent = `${person2} playing O`
+//         currentStatus2.appendChild(playing2)
+//         gameBoard(e.target.value, "x")
+//         e.target.textContent = "X";
+//         e.target.style.fontSize = "10rem"
+//         e.target.style.display = "flex"
+//         e.target.style.justifyContent = "center"
+//         e.target.style.alignItems = "center"
+//         person = person2
+//         //players
+//       }
+//     }
+//     if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
+//       if (person == person2) {
+//         playing1.textContent = `${person1} playing X`
+//         playing1.classList.remove("selected")
+//         currentStatus1.appendChild(playing1)
+//         playing2.textContent = `${person2} playing O`
+//         playing2.classList.add("selected")
+//         currentStatus2.appendChild(playing2)
+//         gameBoard(e.target.value, "o")
+//         e.target.textContent = "O";
+//         e.target.style.fontSize = "10rem"
+//         e.target.style.display = "flex"
+//         e.target.style.justifyContent = "center"
+//         e.target.style.alignItems = "center"
+//         person = person1
+//       }
+//     }
+//   });
+
+// }
