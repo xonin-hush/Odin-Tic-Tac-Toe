@@ -2,6 +2,10 @@ html{
   margin: 0%;
   height: 100%;
 }
+dialog {
+  border-radius: 20px;
+  /* display: inline-block; */
+}
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;

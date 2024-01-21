@@ -23,49 +23,38 @@ function gameBoard(value, XO) {
   switch (value) {
     case 0:
       array[0][0] = XO
-
       checkWin(array)
       break
     case 1:
       array[0][1] = XO
-
-
-
       checkWin(array)
       break
     case 2:
       array[0][2] = XO
-
       checkWin(array)
       break
     case 3:
       array[1][0] = XO
-
       checkWin(array)
       break
     case 4:
       array[1][1] = XO
-
       checkWin(array)
       break
     case 5:
       array[1][2] = XO
-
       checkWin(array)
       break
     case 6:
       array[2][0] = XO
-
       checkWin(array)
       break
     case 7:
       array[2][1] = XO
-
       checkWin(array)
       break
     case 8:
       array[2][2] = XO
-
       checkWin(array)
       break
   }
@@ -101,6 +90,7 @@ function createUser() {
 function checkWin(array) {
   if (array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") {
     if (winner == "") {
+      console.log("winner")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
       winner.style.fontSize = "larger"
@@ -118,7 +108,9 @@ function checkWin(array) {
     }
   }
   else if (array[0][2] == "x" && array[1][2] == "x" && array[2][2] == "x") {
+    console.log("winnnn")
     if (winner == "") {
+      console.log("winnerrr")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
       winner.style.fontSize = "larger"
@@ -136,6 +128,33 @@ function checkWin(array) {
     }
   }
   else if (array[2][0] == "x" && array[2][1] == "x" && array[2][2] == "x") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player1} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
+  else if (array[1][0] == "x" && array[1][1] == "x" && array[1][2] == "x") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player1} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
+  else if (array[0][1] == "x" && array[1][1] == "x" && array[2][1] == "x") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player1} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
+  else if (array[0][2] == "x" && array[1][1] == "x" && array[2][0] == "x") {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
@@ -189,7 +208,33 @@ function checkWin(array) {
       displayBar.appendChild(winner)
     }
   }
-
+  else if (array[1][0] == "o" && array[1][1] == "o" && array[1][2] == "o") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player2} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
+  else if (array[0][1] == "o" && array[1][1] == "o" && array[2][1] == "o") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player2} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
+  else if (array[0][2] == "o" && array[1][1] == "o" && array[2][0] == "o") {
+    if (winner == "") {
+      winner = document.createElement("div")
+      winner.textContent = `Yaaay ${player2} Won`
+      winner.style.fontSize = "larger"
+      winner.style.fontWeight = "bold"
+      displayBar.appendChild(winner)
+    }
+  }
 }
 
 function handlePlayerName() {
@@ -229,40 +274,44 @@ function handleTurns(first, second) {
   var person2 = second
   var person = ""
   person = person1
+
   container.addEventListener('click', function (e) {
-    if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
-      if (person == person1) {
-        playing2.classList.remove("selected")
-        playing1.textContent = `${person1} playing X`
-        playing1.classList.add("selected")
-        currentStatus1.appendChild(playing1)
-        playing2.textContent = `${person2} playing O`
-        currentStatus2.appendChild(playing2)
-        gameBoard(e.target.value, "o")
-        e.target.textContent = "O";
-        e.target.style.fontSize = "10rem"
-        e.target.style.display = "flex"
-        e.target.style.justifyContent = "center"
-        e.target.style.alignItems = "center"
-        person = person2
-        //players
+    if (e.target.getAttribute("id") == "grid-item") {
+      if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
+        if (person == person1) {
+          playing2.classList.remove("selected")
+          playing1.textContent = `${person1} playing X`
+          playing1.classList.add("selected")
+          currentStatus1.appendChild(playing1)
+          playing2.textContent = `${person2} playing O`
+          currentStatus2.appendChild(playing2)
+          gameBoard(e.target.value, "o")
+          e.target.textContent = "O";
+          e.target.style.fontSize = "10rem"
+          e.target.style.display = "flex"
+          e.target.style.justifyContent = "center"
+          e.target.style.alignItems = "center"
+          person = person2
+        }
       }
     }
-    if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
-      if (person == person2) {
-        playing1.textContent = `${person1} playing X`
-        playing1.classList.remove("selected")
-        currentStatus1.appendChild(playing1)
-        playing2.textContent = `${person2} playing O`
-        playing2.classList.add("selected")
-        currentStatus2.appendChild(playing2)
-        gameBoard(e.target.value, "x")
-        e.target.textContent = "X";
-        e.target.style.fontSize = "10rem"
-        e.target.style.display = "flex"
-        e.target.style.justifyContent = "center"
-        e.target.style.alignItems = "center"
-        person = person1
+    if (e.target.getAttribute("id") == "grid-item") {
+      if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
+        if (person == person2) {
+          playing1.textContent = `${person1} playing X`
+          playing1.classList.remove("selected")
+          currentStatus1.appendChild(playing1)
+          playing2.textContent = `${person2} playing O`
+          playing2.classList.add("selected")
+          currentStatus2.appendChild(playing2)
+          gameBoard(e.target.value, "x")
+          e.target.textContent = "X";
+          e.target.style.fontSize = "10rem"
+          e.target.style.display = "flex"
+          e.target.style.justifyContent = "center"
+          e.target.style.alignItems = "center"
+          person = person1
+        }
       }
     }
   });
