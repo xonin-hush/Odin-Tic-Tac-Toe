@@ -153,9 +153,12 @@ body {
   #display-bar{
     color: #ffffff;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     font-size: large;
     background-color: #1f2937;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     margin-top: 2rem;
   }
+  
