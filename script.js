@@ -106,52 +106,69 @@ function checkWin(array) {
     winner.style.fontSize = "larger"
     winner.style.fontWeight = "bold"
     displayBar.appendChild(winner)
-
-
   }
   else if (array[0][0] == "x" && array[1][0] == "x" && array[2][0] == "x") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player1} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][2] == "x" && array[1][2] == "x" && array[2][2] == "x") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player1} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][0] == "x" && array[0][1] == "x" && array[0][2] == "x") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player1} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[2][0] == "x" && array[2][1] == "x" && array[2][2] == "x") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player1} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][0] == "o" && array[1][1] == "o" && array[2][2] == "o") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player2} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][0] == "o" && array[1][0] == "o" && array[2][0] == "o") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player2} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][2] == "o" && array[1][2] == "o" && array[2][2] == "o") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player2} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[0][0] == "o" && array[0][1] == "o" && array[0][2] == "o") {
-
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player2} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
   else if (array[2][0] == "o" && array[2][1] == "o" && array[2][2] == "o") {
-
-
+    winner = document.createElement("div")
+    winner.textContent = `Yaaay ${player2} Won`
+    winner.style.fontSize = "larger"
+    winner.style.fontWeight = "bold"
+    displayBar.appendChild(winner)
   }
 
 }
