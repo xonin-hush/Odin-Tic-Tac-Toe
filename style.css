@@ -15,15 +15,14 @@ dialog {
   border-radius: 20px;
   background-color: #11213A;
   border-color: #11213A;
-  /* display: inline-block; */
+  display: flex;
+  align-items: center;
 }
 
 body {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
-  /* background-color: skyblue; */
   background-image: url('Tic Tac Toe.jpg');
-
   display: flex;
   flex-direction: column;
   min-height: 100%;
