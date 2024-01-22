@@ -91,7 +91,6 @@ function createUser() {
 function checkWin(array) {
   if (array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") {
     if (winner == "") {
-      console.log("winner")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
       winner.style.color = "#EBD4BA"
@@ -111,9 +110,7 @@ function checkWin(array) {
     }
   }
   else if (array[0][2] == "x" && array[1][2] == "x" && array[2][2] == "x") {
-    console.log("winnnn")
     if (winner == "") {
-      console.log("winnerrr")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
       winner.style.color = "#EBD4BA"
@@ -271,7 +268,6 @@ function handlePlayerName() {
 
 
 function resetGameBoard() {
-  console.log(winner)
 
   array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
   gridItems = document.querySelectorAll('#grid-item')
@@ -280,11 +276,9 @@ function resetGameBoard() {
     gridItem.classList.add('color-dark-blue')
     container.removeChild(gridItem)
   })
-  console.log(displayBar)
-  console.log(winner)
   if (winner != "") {
     displayBar.removeChild(winner)
-    winner=""
+    winner = ""
   }
   createGrid(3)
 
