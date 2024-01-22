@@ -17,5 +17,6 @@
 - Factory Functions
 - Arrays
 - Background images CSS
+- Dialog[open] {display:flex}
 ## Credits
 This project was made by [Xonin](https://github.com/xonin-hush) for The Odin Project.

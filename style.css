@@ -9,15 +9,17 @@ input {
   margin-bottom: 7px;
   border-radius: 8px;
 }
-
+dialog[open]{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 dialog {
   color: #EBD4BA;
   border-radius: 20px;
   background-color: #11213A;
   border-color: #11213A;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ 
 }
 
 body {
