@@ -16,6 +16,7 @@ dialog {
   background-color: #11213A;
   border-color: #11213A;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
