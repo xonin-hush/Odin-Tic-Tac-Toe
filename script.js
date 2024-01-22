@@ -1,3 +1,4 @@
+var array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
 let player1 = ""
 let player2 = ""
 var player = ""
@@ -15,10 +16,9 @@ player2 = document.createElement('label')
 displayBar = document.querySelector('#display-bar')
 dialog.showModal()
 createGrid(3)
-
 handlePlayerName()
-var array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
 
+//turns the value of the clicked object to it's address in array
 function gameBoard(value, XO) {
   switch (value) {
     case 0:
@@ -60,6 +60,7 @@ function gameBoard(value, XO) {
   }
 }
 
+//creates grid
 function createGrid(itemNum) {
   container.style.gridTemplateColumns = `repeat(${itemNum},1fr)`;
   container.style.gridTemplateRows = `repeat(${itemNum},1fr)`;
@@ -75,7 +76,9 @@ function createGrid(itemNum) {
     colorMode(gridItem)
   }
 }
-function createUser() {
+
+//initiates users names
+function initiate() {
   if (player1 != "") {
     playing2.classList.remove("selected")
     playing1.textContent = `${player1} playing X`
@@ -87,7 +90,7 @@ function createUser() {
     currentStatus2.appendChild(playing2)
   }
 }
-
+//winning logic
 function checkWin(array) {
   if (array[0][0] == "x" && array[1][1] == "x" && array[2][2] == "x") {
     if (winner == "") {
@@ -251,6 +254,7 @@ function checkWin(array) {
   }
 }
 
+//takes players' names from dialog's form
 function handlePlayerName() {
   submit.addEventListener("click", (event) => {
     event.preventDefault(); // We don't want to submit this fake form
@@ -258,17 +262,15 @@ function handlePlayerName() {
     player1 = player1.value
     player2 = document.querySelector("#player-2")
     player2 = player2.value
-    createUser(player1, player2)
+    initiate(player1, player2)
     handleTurns(player1, player2)
-    createUser()
-
+    initiate()
     dialog.close(dialog.value); // Have to send the select box value here
   });
 }
 
-
+//resets at while keeping users
 function resetGameBoard() {
-
   array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
   gridItems = document.querySelectorAll('#grid-item')
   gridItems.forEach((gridItem) => {
@@ -281,25 +283,23 @@ function resetGameBoard() {
     winner = ""
   }
   createGrid(3)
-
 }
 
+// changes grids' colors when clicked
 function colorMode(gridItem) {
   gridItem.addEventListener('click', () => {
     gridItem.style.removeProperty('background-color');
     gridItem.classList.remove('color-dark-blue')
     gridItem.classList.add('dark-blue');
-
   });
-
 }
 
+//switches turns between users and prints who's turn it is
 function handleTurns(first, second) {
   var person1 = first
   var person2 = second
   var person = ""
   person = person1
-
   container.addEventListener('click', function (e) {
     if (e.target.getAttribute("id") == "grid-item") {
       if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
@@ -345,5 +345,4 @@ function handleTurns(first, second) {
       }
     }
   });
-
 }
