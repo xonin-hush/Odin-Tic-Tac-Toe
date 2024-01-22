@@ -270,15 +270,25 @@ function handlePlayerName() {
 }
 
 
-// function resetGameBoard() {
-//   array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
-//   createGrid(3)
-//   gridItems = document.querySelectorAll('#grid-item')
-//   gridItems.forEach((gridItem) => {
-//     gridItem.style.removeProperty('background-color')
-//     gridItem.classList.add('color-dark-blue')
-//   })
-// }
+function resetGameBoard() {
+  console.log(winner)
+
+  array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
+  gridItems = document.querySelectorAll('#grid-item')
+  gridItems.forEach((gridItem) => {
+    gridItem.style.removeProperty('background-color')
+    gridItem.classList.add('color-dark-blue')
+    container.removeChild(gridItem)
+  })
+  console.log(displayBar)
+  console.log(winner)
+  if (winner != "") {
+    displayBar.removeChild(winner)
+    winner=""
+  }
+  createGrid(3)
+
+}
 
 function colorMode(gridItem) {
   gridItem.addEventListener('click', () => {
