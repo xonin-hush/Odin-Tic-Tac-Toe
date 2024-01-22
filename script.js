@@ -17,7 +17,7 @@ dialog.showModal()
 createGrid(3)
 
 handlePlayerName()
-const array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
+var array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
 
 function gameBoard(value, XO) {
   switch (value) {
@@ -75,13 +75,14 @@ function createGrid(itemNum) {
     colorMode(gridItem)
   }
 }
-createUser()
 function createUser() {
   if (player1 != "") {
     playing2.classList.remove("selected")
     playing1.textContent = `${player1} playing X`
+    playing1.style.color = "#02BBAB"
     currentStatus1.appendChild(playing1)
     playing2.textContent = `${player2} playing O`
+    playing2.style.color = "#D9A41F"
     playing2.classList.add("selected")
     currentStatus2.appendChild(playing2)
   }
@@ -93,6 +94,7 @@ function checkWin(array) {
       console.log("winner")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -102,6 +104,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -113,6 +116,7 @@ function checkWin(array) {
       console.log("winnerrr")
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -122,6 +126,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -131,6 +136,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -140,6 +146,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -149,6 +156,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -158,6 +166,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player1} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -167,6 +176,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -176,6 +186,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -185,6 +196,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -194,6 +206,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -203,6 +216,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -212,6 +226,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -221,6 +236,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -230,6 +246,7 @@ function checkWin(array) {
     if (winner == "") {
       winner = document.createElement("div")
       winner.textContent = `Yaaay ${player2} Won`
+      winner.style.color = "#EBD4BA"
       winner.style.fontSize = "larger"
       winner.style.fontWeight = "bold"
       displayBar.appendChild(winner)
@@ -246,24 +263,28 @@ function handlePlayerName() {
     player2 = player2.value
     createUser(player1, player2)
     handleTurns(player1, player2)
+    createUser()
+
     dialog.close(dialog.value); // Have to send the select box value here
   });
 }
 
 
-function resetGameBoard() {
-  gridItems = document.querySelectorAll('#grid-item')
-  gridItems.forEach((gridItem) => {
-    gridItem.style.removeProperty('background-color')
-    gridItem.classList.add('color-dark-blue')
-  })
-}
+// function resetGameBoard() {
+//   array = [["0", "1", "2"], ["3", "4", "5"], ["6", "7", "8"]]
+//   createGrid(3)
+//   gridItems = document.querySelectorAll('#grid-item')
+//   gridItems.forEach((gridItem) => {
+//     gridItem.style.removeProperty('background-color')
+//     gridItem.classList.add('color-dark-blue')
+//   })
+// }
 
 function colorMode(gridItem) {
   gridItem.addEventListener('click', () => {
     gridItem.style.removeProperty('background-color');
     gridItem.classList.remove('color-dark-blue')
-    gridItem.classList.add('color-sky-blue');
+    gridItem.classList.add('dark-blue');
 
   });
 
@@ -281,12 +302,14 @@ function handleTurns(first, second) {
         if (person == person1) {
           playing2.classList.remove("selected")
           playing1.textContent = `${person1} playing X`
+          playing1.style.color = "#02BBAB"
           playing1.classList.add("selected")
           currentStatus1.appendChild(playing1)
           playing2.textContent = `${person2} playing O`
           currentStatus2.appendChild(playing2)
           gameBoard(e.target.value, "o")
           e.target.textContent = "O";
+          e.target.style.color = "#D9A41F"
           e.target.style.fontSize = "10rem"
           e.target.style.display = "flex"
           e.target.style.justifyContent = "center"
@@ -299,13 +322,16 @@ function handleTurns(first, second) {
       if ((e.target.textContent != "X") && (e.target.textContent != "O")) {
         if (person == person2) {
           playing1.textContent = `${person1} playing X`
+          playing1.style.color = "#02BBAB"
           playing1.classList.remove("selected")
           currentStatus1.appendChild(playing1)
           playing2.textContent = `${person2} playing O`
+          playing2.style.color = "#D9A41F"
           playing2.classList.add("selected")
           currentStatus2.appendChild(playing2)
           gameBoard(e.target.value, "x")
           e.target.textContent = "X";
+          e.target.style.color = "#02BBAB"
           e.target.style.fontSize = "10rem"
           e.target.style.display = "flex"
           e.target.style.justifyContent = "center"
