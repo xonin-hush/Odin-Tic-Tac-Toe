@@ -10,9 +10,10 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ## Features
-- Adding books to library
-- Change reading status of the book
-- Removing a book from the library
+- Change players names
+- Display current playing player
+- Reset button
+- Display winner
 ## Things I got a better understanding of
 - Factory Functions
 - Arrays
